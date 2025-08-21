@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrownLink Onboarding Process Flow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .flow-arrow {
+            position: relative;
+        }
+        .flow-arrow::after {
+            content: '“';
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            font-size: 20px;
+            color: #6B7280;
+        }
+        .process-box {
+            transition: all 0.3s ease;
+        }
+        .process-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .manual { border-left: 4px solid #EF4444; }
+        .semi-auto { border-left: 4px solid #F59E0B; }
+        .auto { border-left: 4px solid #10B981; }
+        .notification { border-left: 4px solid #3B82F6; }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #3B82F6;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Title -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">CrownLink Onboarding Process Flow</h1>
+            <p class="text-gray-600">Current Manual Process vs Future Automation Improvements</p>
+        </div>
+
+        <!-- Legend -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-lg font-semibold mb-4">Legend</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="flex items-center">
+                    <div class="w-4 h-4 bg-red-500 rounded mr-2"></div>
+                    <span class="text-sm">Manual Process</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-4 h-4 bg-yellow-500 rounded mr-2"></div>
+                    <span class="text-sm">Semi-Automated</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-4 h-4 bg-green-500 rounded mr-2"></div>
+                    <span class="text-sm">Fully Automated</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-4 h-4 bg-blue-500 rounded mr-2"></div>
+                    <span class="text-sm">Notification/Alert</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="flex justify-center mb-8">
+            <div class="bg-white rounded-lg p-1 shadow-md">
+                <button class="tab-button active px-6 py-2 rounded-md font-medium" onclick="switchTab('current')">
+                    Current Process
+                </button>
+                <button class="tab-button px-6 py-2 rounded-md font-medium" onclick="switchTab('future')">
+                    Future Improved Process
+                </button>
+            </div>
+        </div>
+
+        <!-- Current Process -->
+        <div id="current" class="tab-content active">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-center">Current Manual Process</h2>
+                
+                <div class="max-w-4xl mx-auto">
+                    <!-- Step 1: SFDC Reports -->
+                    <div class="process-box semi-auto bg-yellow-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">1</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Automated Weekly SFDC Reports (Monday)</h3>
+                                <p class="text-gray-600 mb-2">" "New Projects Last 28 Days"</p>
+                                <p class="text-gray-600 mb-2">" "MSA Executed Accounts"</p>
+                                <p class="text-sm text-yellow-700 bg-yellow-100 p-2 rounded">Recipients: Val, Charlotte, Alvin</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"></div>
+                    </div>
+
+                    <!-- Step 2: Manual Filtering -->
+                    <div class="process-box manual bg-red-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">2</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Manual Customer Eligibility Identification</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="font-medium text-green-700">Include:</p>
+                                        <p class="text-sm text-gray-600">" Oncology In Vivo Study Directors</p>
+                                        <p class="text-sm text-gray-600">" In Vitro, Organoid, Biomarker</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-red-700">Exclude:</p>
+                                        <p class="text-sm text-gray-600">" APAC BD roles</p>
+                                        <p class="text-sm text-gray-600">" Amendment type</p>
+                                        <p class="text-sm text-gray-600">" Academic institutions, Large Pharma</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"></div>
+                    </div>
+
+                    <!-- Step 3: Legal Agreement Check -->
+                    <div class="process-box manual bg-red-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">3</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Manual Legal Agreement Verification</h3>
+                                <p class="text-gray-600">Check legal terms in Salesforce quotes</p>
+                                <p class="text-sm text-red-700 bg-red-100 p-2 rounded mt-2">Requires manual verification of MSA and CrownLink terms</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"></div>
+                    </div>
+
+                    <!-- Step 4: Notify BD -->
+                    <div class="process-box notification bg-blue-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">4</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Notify BD (Tuesday)</h3>
+                                <p class="text-gray-600">Charlotte/Val manually email BDs about identified customers</p>
+                                <p class="text-sm text-blue-700 bg-blue-100 p-2 rounded mt-2">Expected to contact customer by end of week</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"></div>
+                    </div>
+
+                    <!-- Step 5: Notify Customer -->
+                    <div class="process-box notification bg-blue-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">5</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Notify Customer (Friday)</h3>
+                                <p class="text-gray-600">Val/Charlotte manually email customers about upcoming onboarding</p>
+                                <p class="text-sm text-blue-700 bg-blue-100 p-2 rounded mt-2">Expected to start onboarding next Monday</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"></div>
+                    </div>
+
+                    <!-- Step 6: IT Processing -->
+                    <div class="process-box manual bg-red-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">6</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">IT Team Processing</h3>
+                                <p class="text-gray-600">Alvin emails Justin's team for system onboarding</p>
+                                <p class="text-sm text-red-700 bg-red-100 p-2 rounded mt-2">Manual account creation and permission setup</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"></div>
+                    </div>
+
+                    <!-- Step 7: Customer Welcome -->
+                    <div class="process-box notification bg-blue-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">7</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Customer Receives Welcome Instructions</h3>
+                                <p class="text-gray-600">System automatically sends login information and usage guidance</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"></div>
+                    </div>
+
+                    <!-- Step 8: Update SFDC -->
+                    <div class="process-box manual bg-red-50 p-4 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">8</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Manual SFDC Status Update</h3>
+                                <p class="text-gray-600">Val manually marks CrownLink Status as Opt-In on Account page</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Future Improved Process -->
+        <div id="future" class="tab-content">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-center">Future Automated Improvement Process</h2>
+                
+                <div class="max-w-4xl mx-auto">
+                    <!-- Step 1: Intelligent Identification -->
+                    <div class="process-box auto bg-green-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">1</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Automated Customer Eligibility Identification</h3>
+                                <p class="text-gray-600 mb-2">" AI-integrated content awareness for legal terms</p>
+                                <p class="text-gray-600 mb-2">" Automatic application of filtering rules</p>
+                                <p class="text-sm text-green-700 bg-green-100 p-2 rounded">Suggestion: Integrate AI for automatic legal term review</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"></div>
+                    </div>
+
+                    <!-- Branch: Automatic Notifications -->
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="process-box auto bg-green-50 p-4 rounded-lg">
+                            <div class="flex items-start">
+                                <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">2A</div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg mb-2">Auto-Notify BD</h3>
+                                    <p class="text-gray-600">" Auto-send from SFDC Opportunity page</p>
+                                    <p class="text-gray-600">" Use preset email templates</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="process-box auto bg-green-50 p-4 rounded-lg">
+                            <div class="flex items-start">
+                                <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">2B</div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg mb-2">Auto-Notify Customer</h3>
+                                    <p class="text-gray-600">" Direct onboarding notification from SFDC</p>
+                                    <p class="text-gray-600">" Personalized email content</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Auto Onboarding -->
+                    <div class="process-box auto bg-green-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">3</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Automated CrownLink Onboarding</h3>
+                                <p class="text-gray-600 mb-2">" Automatic user account creation</p>
+                                <p class="text-gray-600 mb-2">" Project sponsor-based permission management</p>
+                                <p class="text-gray-600 mb-2">" Support for multiple EXXXX number access</p>
+                                <p class="text-sm text-green-700 bg-green-100 p-2 rounded mt-2">New Feature: Granular permission control</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"></div>
+                    </div>
+
+                    <!-- Step 4: Auto Status Sync -->
+                    <div class="process-box auto bg-green-50 p-4 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">4</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Automated SFDC Status Sync</h3>
+                                <p class="text-gray-600">CrownLink automatically sends status updates to SFDC</p>
+                                <p class="text-sm text-green-700 bg-green-100 p-2 rounded mt-2">Auto-update CrownLink Status to Opt-In</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"></div>
+                    </div>
+
+                    <!-- Step 5: Self-Service -->
+                    <div class="process-box auto bg-green-50 p-4 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">5</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-lg mb-2">Customer Self-Service</h3>
+                                <p class="text-gray-600 mb-2">" Self-service password reset functionality</p>
+                                <p class="text-gray-600 mb-2">" Online help and guidance</p>
+                                <p class="text-sm text-green-700 bg-green-100 p-2 rounded mt-2">Already Released: Password reset self-service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Improvement Points -->
+        <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Key Improvement Areas</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-semibold text-lg mb-3 text-blue-600">Permission Management Improvements</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">"</span>
+                            <span class="text-sm">Limit data access to individual project sponsors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">"</span>
+                            <span class="text-sm">Beneficial for Top25 Pharma with multiple divisions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">"</span>
+                            <span class="text-sm">One person accessing multiple EXXXX studies</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-3 text-purple-600">Regional Expansion</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-2">"</span>
+                            <span class="text-sm">Evaluate APAC-China and APAC-Other onboarding</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-2">"</span>
+                            <span class="text-sm">Address CrownLink speed issues in these regions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-2">"</span>
+                            <span class="text-sm">Global accounts with different sites across regions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Features Requested -->
+        <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Additional Features Requested by BDs</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h4 class="font-semibold text-blue-700 mb-2">SFDC Integration</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>" Send onboarding emails from SFDC</li>
+                        <li>" Use Opportunity Page for notifications</li>
+                        <li>" Auto-update CrownLink Status</li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-green-50 rounded-lg">
+                    <h4 class="font-semibold text-green-700 mb-2">Access Control</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>" Individual project sponsor restrictions</li>
+                        <li>" Multiple EXXXX access for one user</li>
+                        <li>" Academic Institute considerations</li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-purple-50 rounded-lg">
+                    <h4 class="font-semibold text-purple-700 mb-2">Regional Considerations</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>" APAC region onboarding feasibility</li>
+                        <li>" Performance optimization needed</li>
+                        <li>" Global pharma site coordination</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active state from all tab buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Activate selected tab button
+            event.target.classList.add('active');
+        }
+
+        // Add interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const boxes = document.querySelectorAll('.process-box');
+            
+            boxes.forEach(box => {
+                box.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                box.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
